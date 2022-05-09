@@ -1,0 +1,16 @@
+
+input ElectionItemInput {
+  date: String!
+  type: String
+}
+
+input ElectionInput {
+  agencyId: String!
+  electionItems: [ElectionItemInput]
+}
+
+# Mutations require authorization
+type Mutation {
+  createElections(input: ElectionInput): [Election]
+  # deleteElection(id: String!): String
+}

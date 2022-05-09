@@ -1,7 +1,7 @@
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { CandidateQLService } from '../candidate/candidate.service';
 import { ElectionYearsService } from './election-years.service';
-import { ElectionService } from './election/election.service';
+import { ElectionService } from '../election/election.service';
 import { ElectionYearParams } from './election-year.validator';
 
 @Resolver('ElectionYear')

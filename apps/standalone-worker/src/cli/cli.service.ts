@@ -5,6 +5,9 @@ import { QueueController } from '../queue-producer/queue.controller';
  * Command line tool to update the database manually.
  * Example for running 'initialize-data'. Replace with a command from a function decorator.
  *  node -r ts-node/register apps/standalone-worker/src/console.ts initialize-data
+ *  node -r ts-node/register apps/standalone-worker/src/console.ts update-transactions-current
+ *  node -r ts-node/register apps/standalone-worker/src/console.ts update-candidates-current
+ *  node -r ts-node/register apps/standalone-worker/src/console.ts update-candidates-info
  */
 @Console()
 export class CLIService {

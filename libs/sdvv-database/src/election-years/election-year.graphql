@@ -21,6 +21,11 @@ input YearCandidateFilters {
   inGeneralElection: Boolean = false
 }
 
+input ElectionYearFilters {
+  agencyId: String
+  year: String
+}
+
 type Query {
   """
   Returns all years with an election, candidates, and Campaign Finance Data available
@@ -28,7 +33,7 @@ type Query {
 
   The range of election years start at '2016.'
   """
-  electionYears: [ElectionYear]
+  electionYears(filters: ElectionYearFilters): [ElectionYear]
 
   """
   Returns a single election year. Use electionYears: to determine valid inputs for year.

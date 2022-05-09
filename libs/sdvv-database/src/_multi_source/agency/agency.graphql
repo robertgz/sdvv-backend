@@ -1,0 +1,19 @@
+
+# input AgencyFilters {
+#   name: String
+#   shortcut: String
+# }
+
+type Agency {
+  id: String # MD5 of lower case name + source
+  shortcut: String # Will be needed by NetFile source
+  name: String
+  source: String
+  elections: [Election]
+}
+
+type Query {
+  getAgency(id: String!): Agency
+  getAllAgencies: [Agency]
+  # getAgencies(filters: AgencyFilters): [Agency]
+}
