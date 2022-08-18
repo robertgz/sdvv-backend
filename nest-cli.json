@@ -16,7 +16,8 @@
       {
         "include": "**/public/images/*.png"
       }
-    ]
+    ],
+    "deleteOutDir": true
   },
   "projects": {
     "sdvv-backend-nest": {
@@ -53,6 +54,15 @@
       "sourceRoot": "libs/efile-api-data/src",
       "compilerOptions": {
         "tsConfigPath": "libs/efile-api-data/tsconfig.lib.json"
+      }
+    },
+    "data-e-file": {
+      "type": "application",
+      "root": "apps/data-e-file",
+      "entryFile": "main",
+      "sourceRoot": "apps/data-e-file/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/data-e-file/tsconfig.app.json"
       }
     }
   }

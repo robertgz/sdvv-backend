@@ -1,0 +1,16 @@
+
+input CandidateItemInput {
+  name: String # First and Last Name
+  office: String
+    # Examples: City Council San Diego - Dist 6, City Council - Chula Vista  - 4
+}
+
+input CandidateInput {
+  electionId: String
+  candidateItems: [CandidateItemInput]
+}
+
+# Mutations should require authorization
+type Mutation {
+  createCandidates(input: CandidateInput): [Candidate]
+}

@@ -1,4 +1,19 @@
 
+input ExpenseFilters {
+  "This is the category of what the payment is for. Field 'Expn_Code'"
+  expenseCode: String
+
+  "This is the recipient of the payment. Field 'Entity_Cd'"
+  entityCode: String 
+
+  payeeNameFirst: String
+  "Business usually use the last name field and but the first name"
+  payeeNameLast: String
+  payeeCity: String
+  payeeState: String
+  payeeZip: String
+}
+
 type Expenses {
   """
   The total spent by a candidate committee. Data from sheet 'F460-E-Expenditures'
@@ -7,4 +22,6 @@ type Expenses {
   sum: Int
 
   groupBy: ExpensesGroupBy
+  # transactions(filters: ExpenseFilters, limit: Int): [ExpenseTransaction]
+  # transactions: [ExpenseTransaction]
 }

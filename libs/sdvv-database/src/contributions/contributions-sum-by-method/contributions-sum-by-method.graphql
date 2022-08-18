@@ -1,4 +1,18 @@
 
+# type ContributionsAggregation {
+#   sum: Int
+#   contributorCount: Int
+#   contributionCount: Int
+# }
+
+# type ContributionsByCode {
+#   ind: ContributionsAggregation
+#   com: ContributionsAggregation
+#   oth: ContributionsAggregation
+#   pty: ContributionsAggregation
+#   scc: ContributionsAggregation
+# }
+
 type ContributionsSumByCode {
   ind: Int
   com: Int
@@ -14,4 +28,5 @@ type ContributionsSumByMethod {
   monetary: ContributionsSumByCode
   nonMonetary: ContributionsSumByCode
   # loans: ContributionsSumByCode
+  # monetaryAggregation: ContributionsByCode
 }

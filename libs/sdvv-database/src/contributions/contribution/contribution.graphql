@@ -1,4 +1,5 @@
 
+# type ContributionTransaction {
 type Contribution {
   amount: Int
   name: String # 'last, first'
@@ -12,4 +13,5 @@ type Contribution {
   zip: String
   employer: String
   occupation: String
+  # filingId: String
 }

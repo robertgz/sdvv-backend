@@ -1,0 +1,42 @@
+
+type ContributionTransactionMS {
+  id: Int
+  # amount: Int
+  # name: String # 'last, first'
+  # lastName: String
+  # firstName: String
+  # date: String
+  # committee: String
+  # tranId: String
+  # city: String
+  # state: String
+  # zip: String
+  # employer: String
+  # occupation: String
+  # filingId: String
+}
+
+input ContributionTransactionItemInput {
+  id: Int
+  agencyShortcut: String
+  filerId: String
+  reportNumber: String
+  reportDate: String
+  recType: String
+  formType: String
+}
+
+input TransactionInput {
+  agencyShortcut: String
+  filerId: String
+  reportNumber: String
+  reportDate: String
+  recType: String
+  formType: String
+  transactionItems: [ContributionTransactionItemInput]
+}
+
+# Mutations should require authorization
+type Mutation {
+  createContribution(input: TransactionInput): [ContributionTransactionMS]
+}

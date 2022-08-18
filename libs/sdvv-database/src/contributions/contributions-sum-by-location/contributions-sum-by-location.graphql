@@ -1,6 +1,11 @@
 
+type DistrictFilters {
+  district: String
+  electionYear: String
+}
+
 type ContributionsSumByLocation {
-  inDistrict: Int
+  inDistrict (filters: DistrictFilters?): Int
   inCity: Int
   inCounty: Int
   inState: Int

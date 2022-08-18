@@ -23,13 +23,26 @@ enum ContributionJurisdiction {
 input TransactionFilters {
   firstName: String
   lastName: String
-  lastFirstName: String # Example 'last, first'
+
+  "Example 'last, first'"
+  lastFirstName: String 
   zipCodes: [String]
   employers: [String]
   occupations: [String]
   # method: ContributionMethod # not yet implemented in ContributionService
   # location: ContributionLocation # not yet implemented in ContributionService
   # jurisdiction: ContributionJurisdiction # not yet implemented in ContributionService
+}
+
+type Sums { # also for averages, and counts
+  monetary: Int
+  nonMonetary: Int
+  # all: Int
+}
+
+type Entity {
+  code: String # Examples [COM|RCP] - Recipient Committee, IND - Individual;
+  # sums: Sums
 }
 
 type ContributionDetails {

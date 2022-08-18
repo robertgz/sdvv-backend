@@ -1,0 +1,12 @@
+
+type ContributionsByZipCode {
+  sum: Int
+  count: Int # number of contributors
+  average: Int
+  zipCode: String
+  # state: String
+}
+
+# type Query {
+#   zipCodes(committeeName: String): ContributionsByZipCode
+# }

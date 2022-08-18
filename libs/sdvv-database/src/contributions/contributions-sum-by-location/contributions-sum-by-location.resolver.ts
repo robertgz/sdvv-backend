@@ -8,11 +8,13 @@ export class ContributionsSumByLocationResolver {
   ) {}
 
   @ResolveField()
-  async inDistrict(@Parent() contributions) {
+  async inDistrict(@Parent() contributions, @Args() args) {
     const { committeeName } = contributions;
+    const { filters } = args;
 
     const sum = await this.contributionsSumByLocationService.getDistrictSum({
       committeeName,
+      filters,
     });
 
     return sum;

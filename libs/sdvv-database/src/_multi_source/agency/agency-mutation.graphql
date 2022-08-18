@@ -1,0 +1,16 @@
+
+input AgencyItemInput {
+  shortcut: String
+  name: String
+}
+
+input AgencyInput {
+  source: String # SDEFILE, NETFILE
+  agencyItems: [AgencyItemInput]
+}
+
+# Mutations require authorization
+type Mutation {
+  createAgencies(input: AgencyInput): [Agency]
+  # deleteAgency(id: String!): String
+}

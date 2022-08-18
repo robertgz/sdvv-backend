@@ -5,14 +5,25 @@ type Committee {
   dashedName: String
   contributions: ContributionDetails
   expenses: Expenses
+  # loans: LoanDetails
+  # transactionCount: Int # count transactions in rcpt and expn tables
 }
 
+type CommitteeSearchFilters {
+  lastName: String
+  office: String
+  year: String
+  otherText: String
+}
+# barbara bry for san diego mayor 2020
 # Valid strings for committeeName can be found the the Filer_NamL column
 #  from the xlsx files at: 
 # https://efile.sandiego.gov/public/search/campaign/bulk-export
 # Examples: 
 #  "Aaron Brennan for City Council 2020"
 #  "Adrian Kwiatkowski for City Council 2020"
+#  "Barbara Bry for San Diego Mayor 2020"
 type Query {
   committee(committeeName: String!): Committee
+  # committeeSearch(filters: CommitteeSearchFilters): [Committee]
 }

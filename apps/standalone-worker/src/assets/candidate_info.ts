@@ -4,6 +4,8 @@
  * https://www.sandiego.gov/sites/default/files/qualified_candidates_list_2022_updated_3-29-2022.pdf
  * https://www.sandiego.gov/sites/default/files/qualified_candidates_list_november_2020_3.pdf
  * https://www.sandiego.gov/sites/default/files/qualified_candidates_list_2020_1.pdf
+ * https://www.sandiego.gov/sites/default/files/qualifiedcandidates_june2018_0.pdf
+ * https://www.sandiego.gov/sites/default/files/potentialcandidates2018.pdf
  */
 
 export interface CandidateInfo {
@@ -18,7 +20,7 @@ export interface CandidateInfo {
 
 /* Template
 {
-	year: '2020',
+	year: '2018',
 	candidateId: '',
 	optionalName: '',
 	inPrimary: true,
@@ -507,4 +509,54 @@ export const CandidateElectionInfo: CandidateInfo[] = [
     imageFileName: null,
     website: 'https://www.alexsoto2020.com/',
   },
+
+
+  {
+    year: '2018',
+    candidateId: '',
+    optionalName: 'Jordan Beane',
+    inPrimary: true,
+    description: 'Small Business Owner',
+    imageFileName: null,
+    website: 'www.jordanbeane.com',
+  },
+  {
+    year: '2018',
+    candidateId: '',
+    optionalName: 'Jennifer Campbell',
+    inPrimary: true,
+    description: 'Medical Doctor/Professor',
+    imageFileName: null,
+    website: 'www.drjen2018.com',
+  },
+  {
+    year: '2018',
+    candidateId: '',
+    optionalName: 'Randy Hahn',
+    inPrimary: true,
+    description: 'Publisher/Journalist/Sales Manager',
+    imageFileName: null,
+    website: 'randyhahn.com',
+  },
+  {
+    year: '2018',
+    candidateId: '',
+    optionalName: 'Kevin D. Melton',
+    inPrimary: true,
+    description: 'Retired Businessman',
+    imageFileName: null,
+    website: 'www.kevinmelton.net',
+  },
+
+
+  {
+    year: '2018',
+    candidateId: '',
+    optionalName: '',
+    inPrimary: true,
+    description: '',
+    imageFileName: null,
+    website: '',
+  },
+
 ];

@@ -17,6 +17,12 @@ export class JurisdictionEntity {
   @PrimaryColumn()
   name: string;
 
+  @Column({ nullable: true }) // nullable at first then add data then not null
+  startYear: string;
+
+  @Column({ nullable: true })
+  endYear: string;
+
   @Column('text', { array: true })
   zipCodes: string[];
 

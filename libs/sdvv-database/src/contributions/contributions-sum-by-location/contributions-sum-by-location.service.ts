@@ -11,14 +11,23 @@ export class ContributionsSumByLocationService {
     private contributionsSumByZipCodes: ContributionsSumByZipCodes,
   ) {}
 
-  async getDistrictSum({ committeeName }) {
+  async getDistrictSum({ committeeName, filters }) {
     const district = await this.candidateQLService.getDistrict(committeeName);
+
+    // filters.district
+
+    // if (filters) {
+    //   const { district, electionYear } = filters;
+    // }
 
     if (!district) {
       return null;
     }
 
-    const zipCodes = await this.zipCodeService.getDistrictZipCodes(district);
+    const zipCodes = await this.zipCodeService.getDistrictZipCodes(
+      district,
+      // electionYear,
+    );
 
     const sum = await this.contributionsSumByZipCodes.getContributionInZipCodes(
       committeeName,

@@ -1,0 +1,20 @@
+
+input ElectionFilters {
+  agencyId: String!
+  electionYear: String
+  # year: String # replaces electionYear?
+}
+
+type Election {
+  id: String # md5 of lower case (date + type + agency name)
+  date: String # Examples: 06/07/2022, 03/03/2020
+  year: String # Examples: 2022, 2020
+  type: String # Examples: Primary, General
+  name: String # Examples: 06/07/2022 Primary Election, 03/03/2020 General Elections
+  agencyId: String
+}
+
+type Query {
+  # getElection(electionId: string): [Election]
+  elections(filters: ElectionFilters): [Election]
+}

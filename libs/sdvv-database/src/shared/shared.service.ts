@@ -1,9 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { Connection } from 'typeorm';
+// import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
+// import { Logger } from 'winston';
 
 @Injectable()
 export class SharedService {
   constructor(private connection: Connection) {}
+  // @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
 
   public async createBulkData(dataTypeArray: any[], Entity) {
     const queryRunner = this.connection.createQueryRunner();
@@ -24,6 +27,12 @@ export class SharedService {
           .execute();
       }
     } catch (error) {
+      // this.logger.log({
+      //   level: 'error',
+      //   message: 'Creating bulk data in database failed',
+      //   type: Entity['name'],
+      // });
+
       throw error;
     } finally {
       await queryRunner.release();
@@ -56,6 +65,13 @@ export class SharedService {
         .andWhere('form_type = :formType', { formType })
         .execute();
     } catch (error) {
+      // this.logger.log({
+      //   level: 'error',
+      //   message: 'Deleting rows in database failed',
+      //   year: year,
+      //   formType: formType,
+      // });
+
       throw error;
     } finally {
       await queryRunner.release();

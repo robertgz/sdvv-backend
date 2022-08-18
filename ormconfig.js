@@ -24,9 +24,15 @@ module.exports = {
     'libs/sdvv-database/src/jurisdictions/*.entity{.ts,.js}',
     'libs/sdvv-database/src/zipCodes/*.entity{.ts,.js}',
     'libs/sdvv-database/src/candidate/*.entity{.ts,.js}',
+    'libs/sdvv-database/src/_multi_source/**/*.entity{.ts,.js}',
   ],
   migrationsTableName: 'migrations_typeorm',
   migrations: ['apps/migration/**/*{.ts,.js}'],
   cli: { migrationsDir: 'apps/migration' },
   ssl: getTlsOptions(),
 };
+// npm run typeorm migration:generate -- -n InitializeDatabase --pretty
+// npm run typeorm migration:generate -- -n UpdateTable --pretty
+// npm run typeorm migration:create -- -n UpdateTable --pretty
+// npm run typeorm migration:generate -- -n CandidateAddInPrimaryColumn  --pretty
+// npm run typeorm migration:generate -- -n NewSchema  --pretty

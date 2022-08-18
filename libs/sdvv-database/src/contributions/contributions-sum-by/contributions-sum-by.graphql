@@ -9,4 +9,5 @@ type ContributionsSumBy {
   jurisdiction: ContributionsSumByJurisdiction
   method: ContributionsSumByMethod
   location: ContributionsSumByLocation
+  # zipCode: ContributionsByZipCode
 }

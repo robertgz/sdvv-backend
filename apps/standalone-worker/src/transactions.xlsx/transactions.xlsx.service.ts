@@ -217,10 +217,11 @@ export class TransactionsXLSXService {
         if (global.gc) {
           global.gc(); // Run Garbage Collection to free up memory on the Heap
         }
-      } catch (e) {
+      } catch (error) {
         this.logger.error('Skipping Transactions for XLSX workbook sheet', {
           transactionYear: year,
           sheetName: sheet.sheetName,
+          error,
         });
       }
     }

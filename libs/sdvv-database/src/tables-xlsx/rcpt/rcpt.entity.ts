@@ -33,6 +33,14 @@ export class RCPTEntity {
 
   @Column({ nullable: true })
   cmtte_type: string;
+  /**
+   * Type of Recipient Committee  (Req on F450 & F460)
+   * Value:
+   * C = Cand/Officeholder Controlled Cmtte [460]
+   * P = Cand/Officeholder Primarily Formed [450|460]
+   * B = Ballot Measure Committee [450|460]
+   * G = General Purpose Committee [450|460]
+   */
 
   @Column()
   rpt_date: string;
@@ -65,6 +73,13 @@ export class RCPTEntity {
 
   @Column()
   entity_cd: string;
+  /**
+   * Values: [COM|RCP] - Recipient Committee
+   * IND - Individual;
+   * OTH - Other (e.g. a Bus, Cmtte, Org, ...)
+   * PTY - Political Party; (F496P3 & F460)
+   * SCC - Small Contributor Committee (F496P3 & F460)
+   */
 
   @Column()
   ctrib_naml: string;
@@ -101,9 +116,20 @@ export class RCPTEntity {
 
   @Column()
   ctrib_self: boolean;
+  /**
+   * Self Employed?
+   */
 
   @Column({ nullable: true })
   tran_type: string;
+  /**
+   * Transaction Type - Values:
+   * F = Forgiven Loan;
+   * I = Intermediary;
+   * R = Returned (Negative Amount?);
+   * T = Third Party Repayment;
+   * X = Transfer
+   */
 
   @Column()
   rcpt_date: string;

@@ -21,6 +21,7 @@ export class ContributionsDetailsService {
         committeeNames,
       })
 
+      // .andWhere('entity_cd = :entityCd', { entityCd: 'IND' })
       .andWhere('rec_type = :recType', { recType: 'RCPT' })
       .andWhere('form_type IN (:...formType)', { formType: this.RCPTTypes });
 
@@ -37,6 +38,7 @@ export class ContributionsDetailsService {
       .andWhere('filer_naml iLike :committeeName', { committeeName })
       .andWhere('rec_type = :recType', { recType: 'RCPT' })
       .andWhere('form_type IN (:...formType)', { formType: this.RCPTTypes });
+    // .andWhere('entity_cd = :entityCd', { entityCd: 'IND' })
 
     const { average } = await query.getRawOne();
     return average;

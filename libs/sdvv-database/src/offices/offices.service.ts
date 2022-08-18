@@ -23,6 +23,7 @@ export class OfficesService {
     return committeeNames;
   }
 
+  // same as CandidateQLService.addWhereFilters
   private addWhereFilters(query, filters) {
     if (!filters) {
       return;

@@ -1,0 +1,23 @@
+
+type ExpenseTransaction {
+  filingId: String
+  amount: Int
+  code: String
+  date: String
+  committee: String
+  tranId: String
+  Entity_Cd: String
+  Payee_NamL: String
+  Payee_NamF: String
+  Payee_City: String
+  Payee_ST: String
+  Payee_ZIP4: String
+  Expn_Code: String
+  Expn_Dscr: String
+  Cmte_ID: String
+
+
+  # name: String # 'last, first'
+  # lastName: String
+  # firstName: String
+}

@@ -15,16 +15,27 @@ type Candidate {
   office: String
   district: String
   electionYear: String
-  committeeName: String
+  committeeName: String # @deprecated # use committee to determine the name
   inGeneralElection: Boolean
   inPrimaryElection: Boolean
   fullOfficeName: String
   "Finance data for a candidate committee"
   committee: Committee
+
+  # outsideSpending: IndependentExpenditures
   independentExpenditures: IndependentExpenditures
 }
 
+# type FullName {
+#   first: String
+#   last: String
+# }
+
 input CandidateFilters {
+  # names: [FullName]
+  # agencyIds: [String]
+  # elections: [String]
+  # electionIds: [String]
   years: [String]
   offices: [String]
   districts: [String]

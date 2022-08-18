@@ -64,6 +64,12 @@ export class EXPNEntity {
 
   @Column({ nullable: true })
   entity_cd: string;
+  /**
+   * Values:
+   * [COM|RCP] - Recipient Committee
+   * IND - Individual;
+   * OTH - Other
+   */
 
   @Column({ nullable: true })
   payee_naml: string;

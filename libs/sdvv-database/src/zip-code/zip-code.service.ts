@@ -11,7 +11,11 @@ import { ZipCodeEntity } from '@app/sdvv-database/zipCodes/zipCodes.entity';
 export class ZipCodeService {
   constructor(private connection: Connection) {}
 
-  async getDistrictZipCodes(district: string) {
+  async getDistrictZipCodes(district: string, electionYear?: string) {
+    if (electionYear && parseInt(electionYear) > 2021) {
+      return [];
+    }
+
     const results = await this.connection
       .getRepository(JurisdictionEntity)
       .createQueryBuilder()
