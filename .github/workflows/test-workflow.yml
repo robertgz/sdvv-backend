@@ -1,0 +1,18 @@
+name: Test Workflow
+
+on:
+  workflow_dispatch:
+
+env:
+  SECRET3: Abcd
+  SECRET4: ${{ secrets.SECRET5 }}
+
+
+jobs:
+  test-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ env.SECRET3 }}
+      - run: echo ${{ env.SECRET4 }}
+      - run: echo ${{ secrets.SECRET5 }}
